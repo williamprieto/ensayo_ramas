@@ -10,17 +10,15 @@
       <%= f.label :Nombre_del_evento%>
       <%= f.text_field :nombreEven %>
     </div>
-
     <div>
       <br>
       <%= f.label :Lugar%>
       <%= f.select :lugar, [['Hot','hot'],['Medium','medium'],['Cold','cold']]  %><br>
     </div>
-
     <div>
       <br>
-      <%= f.label :Fecha_y_hora%>
-      <%= f.datetime_select :fechaHora %><br>
+      <%= f.label :Fecha%>
+      <%= f.text_field :fechaHora, id:"datepicker_e" %><br>
     </div>
     <div>
       <br>
