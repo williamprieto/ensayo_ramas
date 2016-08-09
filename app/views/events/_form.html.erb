@@ -1,0 +1,46 @@
+ <%= form_for @event do |f| %>
+    <%= render 'shared_eventos/error_messages' %>
+    <div>
+      <%= f.label :Responsable %>
+      <%= f.text_field :responsable %>
+    </div>
+
+    <div>
+      <br>
+      <%= f.label :Nombre_del_evento%>
+      <%= f.text_field :nombreEven %>
+    </div>
+
+    <div>
+      <br>
+      <%= f.label :Lugar%>
+      <%= f.select :lugar, [['Hot','hot'],['Medium','medium'],['Cold','cold']]  %><br>
+    </div>
+
+    <div>
+      <br>
+      <%= f.label :Fecha_y_hora%>
+      <%= f.datetime_select :fechaHora %><br>
+    </div>
+    <div>
+      <br>
+      <%= f.label :Descripción%>
+      <br>
+      <%= f.text_area :descripcion %><br>
+    </div>
+
+    <div>
+      <br>
+      <%= f.label :Teléfono%>
+      <%= f.text_field :telefono %><br>
+    </div>
+
+    <div>
+      <br>
+      <%= f.label :Correo%>
+      <%= f.text_field :email %><br>
+    </div>
+    <p>
+      <%= f.submit "Guardar evento" %>
+    </p>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  responsable: MyString
+  nombreEven: MyString
+  lugar: MyString
+  fechaHora: 2016-08-03 18:41:38
+  descripcion: MyText
+  telefono: MyText
+  email: MyText
+
+two:
+  responsable: MyString
+  nombreEven: MyString
+  lugar: MyString
+  fechaHora: 2016-08-03 18:41:38
+  descripcion: MyText
+  telefono: MyText
+  email: MyText
