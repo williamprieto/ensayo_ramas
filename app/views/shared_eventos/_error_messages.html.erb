@@ -1,20 +1,20 @@
 <% if @event.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
-        El formulario contiene errores
+        El formulario contiene los siguientes errores
       </div>
       <ul>
         <% @event.errors.full_messages.each do |msg| %>
             <% if  msg == "Nombreeven can't be blank" %>
-                <li><%= "Nombre del evento no puede estar vacio" %></li>
+                <li><%= "Nombre del evento no puede estar vacío" %></li>
             <% elsif msg == "Responsable can't be blank" %>
                 <li><%= "Responsable no puede estar vacio" %></li>
             <% elsif msg == "Telefono can't be blank" %>
-                <li><%= "Telefono no puede estar vacio" %></li>
+                <li><%= "Teléfono no puede estar vacio" %></li>
             <% elsif msg == "Telefono is not a number" %>
-                <li><%= "Telefono debe contener caracteres numericos " %></li>
+                <li><%= "Teléfono debe contener caracteres numericos " %></li>
             <% elsif msg == "Email can't be blank" %>
-                <li><%= "Corre no puede estar vacio" %></li>
+                <li><%= "Corre no puede estar vacío" %></li>
             <% elsif msg == "Email is invalid" %>
                 <li><%= "Correo debe estar en formato ejemplo@ejemplo.com" %></li>
             <% elsif msg == "Email has already been taken" %>
