@@ -5,6 +5,7 @@
       </div>
       <ul>
         <% @event.errors.full_messages.each do |msg| %>
+
             <% if  msg == "Nombreeven can't be blank" %>
                 <li><%= "Nombre del evento no puede estar vacío" %></li>
             <% elsif msg == "Responsable can't be blank" %>
@@ -19,7 +20,10 @@
                 <li><%= "Correo debe estar en formato ejemplo@ejemplo.com" %></li>
             <% elsif msg == "Email has already been taken" %>
                 <li><%= "Correo ya existe " %></li>
-
+            <% elsif msg == "Departamento is reserved" %>
+                <li> <%= "Debe seleccionar un departamento" %></li>
+            <% elsif msg == "Lugar is reserved" %>
+                <li>  <%= "Debe seleccionar una ciudad" %></li>
             <% end %>
         <% end %>
       </ul>
