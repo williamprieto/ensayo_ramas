@@ -22,5 +22,12 @@ class Event < ApplicationRecord
     write_attribute :descripcion, val.capitalize
   end
 
+  def self.search(search)
+    if search
+      where('lugar LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 
 end

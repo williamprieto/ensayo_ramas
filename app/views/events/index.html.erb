@@ -1,34 +1,23 @@
-
-
-
-
 <div class="container">
-  <h1>EVENTOS</h1>
-  <div>
-    <p>Accediendo a la creación de eventos <br>
-      <%= link_to 'Nuevo Evento', new_event_path %>
-    </p>
-  </div>
-  <% @events.each do |event| %>
-
-
-    <div class="card alinear_eventos">
-
-        <div class="card-block ancho_div_eventos">
-          <h4 class="card-title"><%= event.nombreEven %></h4>
-          <p class="card-text">Ciudad <%= event.lugar  %></p>
-          <p class="card-text"><small class="text-muted">Fecha <%= event.fechaHora.strftime(" %A, %w of %B") %></small></p>
-          <p class="card-text"><small class="text-muted">Hora <%= event.fechaHora.strftime(" %X %p") %></small></p>
-          <p><%= link_to 'Mostrar', event_path(event) %></p>
-
-
-        </div>
-
-
+  <div class="jumbotron">
+    <h1>EVENTOS</h1>
+    <div>
+      <p>Accediendo a la creación de eventos <br>
+        <%= link_to 'Nuevo Evento', new_event_path %>
+      </p>
     </div>
+  </div>
 
-
-
-
+  <%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+      <div class="container">
+        <%= text_field_tag :search, params[:search] %>
+        <submit class="btn btn-default">
+          <%= submit_tag "Buscar lugar del evento", :name => nil %></submit>
+      </div>
+      <div class="container" id="events" >
+        <%= render 'event' %>
+      </div>
   <% end %>
+
+
 </div>

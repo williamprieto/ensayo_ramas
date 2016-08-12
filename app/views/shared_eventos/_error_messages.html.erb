@@ -1,9 +1,9 @@
 <% if @event.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation_event">
       <div class="alert alert-danger">
         El formulario contiene los siguientes errores
       </div>
-      <ul>
+      <ul id="ul_event">
         <% @event.errors.full_messages.each do |msg| %>
 
             <% if  msg == "Nombreeven can't be blank" %>

@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20160810065631) do
   create_table "events", force: :cascade do |t|
     t.string   "responsable"
     t.string   "nombreEven"
-    t.string   "departamento"
     t.string   "lugar"
     t.datetime "fechaHora"
     t.text     "descripcion"
@@ -23,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160810065631) do
     t.text     "email"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-
+    t.string   "departamento"
   end
 
 end

@@ -14,21 +14,23 @@
     <div>
       <br>
       <%= f.label :Departamento%>
-      <% if @event.departamento != "" %>
-      <%= f.select :departamento, [[@event.departamento]]  %><br>
+      <% if @event.departamento != nil %>
+          <%= f.select :departamento, options_for_select([f.object.departamento]) %>
+          <br>
       <% else%>
-      <%= f.select :departamento, [['Seleccionar','seleccionar']]  %><br>
+          <%= f.select :departamento, [['Seleccionar','seleccionar']]  %><br>
       <% end%>
     </div>
-     <div>
-       <br>
-       <%= f.label :Ciudad%>
-       <% if @event.lugar != "" %>
-       <%= f.select :lugar, [[@event.lugar ]]  %><br>
-       <% else%>
-       <%= f.select :lugar, [['Seleccionar','seleccionar']]  %><br>
-       <% end%>
-     </div>
+    <div>
+      <br>
+      <%= f.label :Ciudad%>
+      <% if @event.lugar != nil %>
+          <%= f.select :lugar, options_for_select([[f.object.lugar]], f.object.lugar) %>
+          <br>
+      <% else%>
+          <%= f.select :lugar, [['Seleccionar','seleccionar']]  %><br>
+      <% end%>
+    </div>
     <div>
       <br>
       <%= f.label :Fecha%>

@@ -1,14 +1,11 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*
- *= require jquery-ui
- *= require jquery-ui/datepicker
- */
 
-#error_explanation {
+
+#error_explanation_event {
   color: red;
-  ul {
+  #ul_event {
     color: red;
     margin: 0 0 30px 0;
   }

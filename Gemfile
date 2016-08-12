@@ -12,10 +12,10 @@ gem 'coffee-rails', '~> 4.2'
 
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap3-rails'
+gem 'bootstrap-sass'
 
 
 source 'https://rails-assets.org' do

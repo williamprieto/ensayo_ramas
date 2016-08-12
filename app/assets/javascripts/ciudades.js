@@ -26,24 +26,9 @@ function init(obj_select) {
 
 function updateCities(){
     var departamento = $("#event_departamento option:selected").text();
-    loadJSON(function(response) {
-        // Parse JSON string into object
-        var ciudades = [];
-        var JSONFinal = JSON.parse(response);
-        $.each(JSONFinal,function(index, value){
-            if(value.departamento == departamento){
-                ciudades = value.ciudades;
-                return;
-            }
-        });
-        console.log(ciudades);
-        $("#event_lugar").html('');
-        $.each(ciudades,function(index, value){
-            $("#event_lugar").append('<option>'+value+'</option>')
-        });
-    });
+    Json(departamento);
 }
-
+// accion del evento al presionar los departamentos
 $(document).ready(function () {
     $("#event_departamento").one('mousedown',function () {
         init(this);
@@ -52,3 +37,42 @@ $(document).ready(function () {
         updateCities();
     });
 });
+//
+
+function updateCities2(ciudades){
+    $("#event_lugar").html('');
+    $.each(ciudades,function(index, value){
+        $("#event_lugar").append('<option>'+value+'</option>')
+    });
+}
+
+// accion del evento al presionar las ciudades en la vista edit
+    $( "#event_lugar" ).one('mousedown',function() {
+        var aux_depar= $("#event_departamento").val();
+        console.log(aux_depar);
+        if (aux_depar == null) {
+
+        }else{
+            Json(aux_depar);            
+            
+        }
+
+
+
+    });
+
+function Json(aux_departamento) {
+    loadJSON(function(response) {
+        // Parse JSON string into object
+        var ciudades = [];
+        var JSONFinal = JSON.parse(response);
+        $.each(JSONFinal,function(index, value){
+            if(value.departamento == aux_departamento){
+                ciudades = value.ciudades;
+                return;
+            }
+        });
+        console.log(ciudades);
+        updateCities2(ciudades);
+    });
+}

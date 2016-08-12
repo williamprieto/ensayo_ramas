@@ -6,7 +6,7 @@
   </div>
   <div>
     <br>
-    <strong>Nombre_del_evento: </strong>
+    <strong>Nombre del evento: </strong>
     <%= @event.nombreEven %>
   </div>
   <div>
@@ -19,7 +19,6 @@
     <strong>Ciudad: </strong>
     <%= @event.lugar %><br>
   </div>
-
   <div>
     <br>
     <strong>Fecha: </strong>
@@ -29,6 +28,21 @@
     <br>
     <strong>Hora: </strong>
     <%= (@event.fechaHora).strftime(" %X %p") %><br>
+  </div>
+  <div>
+    <br>
+    <strong>Descripción: </strong>
+    <%= @event.descripcion %><br>
+  </div>
+  <div>
+    <br>
+    <strong>Teléfono: </strong>
+    <%= @event.telefono %><br>
+  </div>
+  <div>
+    <br>
+    <strong>Correo: </strong>
+    <%= @event.email %><br>
   </div>
   <div>
     <br>
