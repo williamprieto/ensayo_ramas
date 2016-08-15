@@ -1,13 +1,38 @@
-<% @events.each do |event| %>
+<!--
+% @events.each do |event| %>
 
-    <div class="card alinear_eventos">
-      <div class="card-block ancho_div_eventos">
-        <h4 class="card-title"><%= event.nombreEven %></h4>
-        <p class="card-text">Lugar: <%= event.lugar %></p>
-        <p class="card-text"><small class="text-muted">Fecha: <%= event.fechaHora.strftime(" %A, %w of %B") %></small></p>
-        <p class="card-text"><small class="text-muted">Hora: <%= event.fechaHora.strftime(" %X %p") %></small></p>
-        <p><%= link_to 'Mostrar', event_path(event) %></p>
-      </div>
+  <div class="card alinear_eventos">
+    <div class="card-block ancho_div_eventos">
+      <h4 class="card-title">%= event.nombreEven %></h4>
+      <p class="card-text">Lugar: %= event.lugar %></p>
+      <p class="card-text"><small class="text-muted">Fecha: <= event.fechaHora.strftime(" %A, %w of %B") %></small></p>
+      <p class="card-text"><small class="text-muted">Hora: %= event.fechaHora.strftime(" %X %p") %></small></p>
+      <p>%= link_to 'Mostrar', event_path(event) %></p>
     </div>
+  </div>
 
-<% end %>
+% end %>
+-->
+<div class="row" >
+  <% @events.each do |event| %>
+
+      <div class="col-sm-3" >
+        <div style="box-sizing: border-box">
+          <div class="alinear_eventos">
+            <h4 class="header_event"><%= event.nombreEven %></h4>
+            <div class="card_even">
+              <div class="card-content_even">
+                <p >Lugar: <%= event.lugar %></p>
+                <p ><small class="text-muted">Fecha: <%= event.fechaHora.strftime(" %A, %w of %B") %></small></p>
+                <p ><small class="text-muted">Hora: <%= event.fechaHora.strftime(" %X %p") %></small></p>
+              </div>
+              <div class="card-action_even">
+                <p><%= link_to 'Mostrar', event_path(event) %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>

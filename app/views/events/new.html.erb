@@ -1,9 +1,23 @@
+<!--
 <div class="container">
   <div>
     <h1>CREACION DE UN NUEVO EVENTO</h1>
-    <%= render 'form' %>
-    <%= link_to 'Volver', events_path %>
+   %= render 'form' %>
+   %= link_to 'Volver', events_path %>
   </div>
 
 </div>
 
+-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1> Nuevo Evento</h1>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+  <div class="panle-footer">
+    <%= link_to 'Volver', events_path %>
+  </div>
+
+</div>

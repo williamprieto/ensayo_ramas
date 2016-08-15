@@ -1,55 +1,95 @@
-<div class="container">
-  <h1>Mostrando evento ingresado</h1>
-  <div>
-    <strong>Responsable: </strong>
-    <%= @event.responsable %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Evento:<%= @event.nombreEven %></h1>
   </div>
-  <div>
-    <br>
-    <strong>Nombre del evento: </strong>
-    <%= @event.nombreEven %>
+  <div class="row">
+    <div class="col-sm-5" style="text-align:right">
+      <div style="font-size: 18px">
+        <div>
+          <strong>Responsable: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Descripción: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Departamento: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Ciudad: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Fecha: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Hora: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Teléfono: </strong>
+        </div>
+        <div>
+          <br>
+          <strong>Correo: </strong>
+        </div>
+        <div>
+          <br>
+          <%= link_to 'Editar evento', edit_event_path,class:"btn btn-primary" %>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-sm-6" >
+      <div style="font-size: 18px">
+        <div>
+          <%= @event.responsable %>
+        </div>
+        <div>
+          <br>
+          <%= @event.descripcion %><br>
+        </div>
+        <div>
+          <br>
+          <%= @event.departamento %><br>
+        </div>
+        <div>
+          <br>
+          <%= @event.lugar %><br>
+        </div>
+        <div>
+          <br>
+          <%= (@event.fechaHora).strftime(" %A, %w of %B") %><br>
+        </div>
+        <div>
+          <br>
+          <%= (@event.fechaHora).strftime(" %X %p") %><br>
+        </div>
+
+        <div>
+          <br>
+          <%= @event.telefono %><br>
+        </div>
+        <div>
+          <br>
+          <%= @event.email %><br>
+        </div>
+        <div>
+          <br>
+          <%= link_to 'Eliminar evento', event_path(),
+                      method: :delete,
+                      data: { confirm: 'Estas seguro de eliminarlo?' },class:"btn btn-danger" %>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div>
-    <br>
-    <strong>Departamento: </strong>
-    <%= @event.departamento %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Ciudad: </strong>
-    <%= @event.lugar %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Fecha: </strong>
-    <%= (@event.fechaHora).strftime(" %A, %w of %B") %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Hora: </strong>
-    <%= (@event.fechaHora).strftime(" %X %p") %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Descripción: </strong>
-    <%= @event.descripcion %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Teléfono: </strong>
-    <%= @event.telefono %><br>
-  </div>
-  <div>
-    <br>
-    <strong>Correo: </strong>
-    <%= @event.email %><br>
-  </div>
-  <div>
-    <br>
-    <p><%= link_to 'Editar evento', edit_event_path %></p>
-    <p><%= link_to 'Eliminar evento', event_path(),
-                   method: :delete,
-                   data: { confirm: 'Estas seguro de eliminarlo?' } %></p>
+
     <p><%= link_to 'Volver', events_path %></p>
 
   </div>

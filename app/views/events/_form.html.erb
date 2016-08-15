@@ -1,62 +1,74 @@
 <%= form_for @event do |f| %>
-    <%= render 'shared_eventos/error_messages' %>
-    <div>
-      <%= f.label :Responsable %>
-      <%= f.text_field :responsable %>
+    <div class="form-group">
+      <%= render 'shared_eventos/error_messages' %>
     </div>
 
-    <div>
-      <br>
-      <%= f.label :Nombre_del_evento%>
-      <%= f.text_field :nombreEven%>
-
-    </div>
-    <div>
-      <br>
-      <%= f.label :Departamento%>
-      <% if @event.departamento != nil %>
-          <%= f.select :departamento, options_for_select([f.object.departamento]) %>
-          <br>
-      <% else%>
-          <%= f.select :departamento, [['Seleccionar','seleccionar']]  %><br>
-      <% end%>
-    </div>
-    <div>
-      <br>
-      <%= f.label :Ciudad%>
-      <% if @event.lugar != nil %>
-          <%= f.select :lugar, options_for_select([[f.object.lugar]], f.object.lugar) %>
-          <br>
-      <% else%>
-          <%= f.select :lugar, [['Seleccionar','seleccionar']]  %><br>
-      <% end%>
-    </div>
-    <div>
-      <br>
-      <%= f.label :Fecha%>
-      <%= f.date_select :fechaHora%>
-      <%= f.label :Hora%>
-      <%= f.time_select :fechaHora%><br>
-    </div>
-    <div>
-      <br>
-      <%= f.label :Descripción%>
-      <br>
-      <%= f.text_area :descripcion %><br>
+    <div class="form-group">
+      <%= f.label :Responsable %><br>
+      <%= f.text_field :responsable, autofocus: true,class: "form-control"  %>
     </div>
 
-    <div>
-      <br>
-      <%= f.label :Teléfono%>
-      <%= f.text_field :telefono %><br>
+    <div class="form-group">
+      <%= f.label :Nombre_del_evento%><br>
+      <%= f.text_field :nombreEven, autofocus: true,class: "form-control" %>
     </div>
 
-    <div>
-      <br>
+    <div class="row">
+      <div class="col-sm-4" >
+        <div class="form-group">
+          <%= f.label :Departamento%> <br>
+          <% if @event.departamento != nil %>
+              <%= f.select :departamento, options_for_select([f.object.departamento]), {}, {class: "select_d_c_data tamselec_d_c"} %>
+              <br>
+          <% else%>
+              <%= f.select :departamento, [['Seleccionar','seleccionar']], {}, {class: "select_d_c_data tamselec_d_c"}  %><br>
+          <% end%>
+        </div>
+      </div>
+
+      <div class="col-sm-4" >
+        <div class="form-group" >
+          <%= f.label :Ciudad%> <br>
+          <% if @event.lugar != nil %>
+              <%= f.select :lugar, options_for_select([[f.object.lugar]], f.object.lugar), {}, {class: "select_d_c_data tamselec_d_c"} %>
+          <% else%>
+              <%= f.select :lugar, [['Seleccionar','seleccionar']], {}, {class: "select_d_c_data tamselec_d_c"}  %><br>
+          <% end%>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.label :Fecha%>
+          <%= f.date_select :fechaHora, {}, {class: "select_d_c_data tamselec_data"}%>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.label :Hora%>
+          <%= f.time_select :fechaHora, {}, {class: "select_d_c_data tamselec_datat"}%>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Descripción%><br>
+      <%= f.text_area :descripcion, autofocus: true,class: "form-control"  %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Teléfono%><br>
+      <%= f.text_field :telefono, autofocus: true,class: "form-control"  %>
+    </div>
+
+    <div class="form-group">
       <%= f.label :Correo%>
-      <%= f.text_field :email %><br>
+      <%= f.text_field :email, autofocus: true,class: "form-control" %><br>
     </div>
     <p>
-      <%= f.submit "Guardar evento" %>
+      <%= f.submit "Guardar evento",class:"btn btn-primary" %>
     </p>
 <% end %>

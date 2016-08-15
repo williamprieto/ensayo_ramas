@@ -9,15 +9,17 @@
   </div>
 
   <%= form_tag events_path, :method => 'get', :id => "events_search" do %>
-      <div class="container">
-        <%= text_field_tag :search, params[:search] %>
-        <submit class="btn btn-default">
-          <%= submit_tag "Buscar lugar del evento", :name => nil %></submit>
+      <div >
+        <div style="display: inline-block">
+          <%= text_field_tag :search, params[:search],class:"form-control " %>
+        </div>
+        <div style="display: inline-block" >
+          <%= submit_tag "Buscar lugar del evento", :name => nil,class:"btn btn-default" %></submit>
+        </div>
       </div>
-      <div class="container" id="events" >
+      <div id="events" >
         <%= render 'event' %>
       </div>
   <% end %>
-
 
 </div>

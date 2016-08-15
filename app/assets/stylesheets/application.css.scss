@@ -1,7 +1,23 @@
 /*
 *= require bootstrap
 */
-
+.select_d_c_data{
+  background: transparent;
+  font-size: 14px;
+  margin:10px auto 5px auto;
+  border:1px solid #d9d9d9;
+  height:30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.tamselec_d_c{
+  width: 140px;
+}
+.tamselec_data{
+  width: 95px;
+}
+.tamselec_datat{
+  width: 60px;
+}
 
 .alinear_eventos{
   display: inline-block !important;
@@ -11,3 +27,44 @@
   width: 250px;
 }
 
+
+/*desde aca empieza el diseño*/
+
+.card_even {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  transition: box-shadow .25s;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 2px;
+}
+.card_even .card-image_even img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+img {
+  border: 0;
+}
+.card_even .card-content_even {
+  padding: 20px;
+  width: 250px;
+  border-radius: 0 0 2px 2px;
+}
+.card_even .card-action_even {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 20px;
+}
+.header_event {
+  color: #ee6e73;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 0 20px;
+}

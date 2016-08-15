@@ -31,6 +31,7 @@ function updateCities(){
 // accion del evento al presionar los departamentos
 $(document).ready(function () {
     $("#event_departamento").one('mousedown',function () {
+        console.log("presiono 1");
         init(this);
     });
     $("#event_departamento").change(function () {
